@@ -6,7 +6,7 @@ const Navbar = () => {
     <div className='mb-2 p-4 bg-gradient-to-r from-stone-200 to-indigo-300 rounded-md flex justify-between items-center'>
       <div className='text-black text-xl'>
         <Link  href="/">
-          <h1 className='font-extrabold'>CURD APP</h1>
+          <h1 className='font-extrabold'>Task Manager</h1>
         </Link>
       </div>
       <div className='h-fit'>
