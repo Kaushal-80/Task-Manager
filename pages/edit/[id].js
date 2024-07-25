@@ -54,8 +54,8 @@ export default EditTopic
 
 export async function getServerSideProps(ctx) {
   const { id } = ctx.query
-  const res = await axios.get(`${process.env.BASE_URL}/api/topics?id=`+ id)
-  const data = await res.data;
+  const res = await axios.get(`${process.env.BASE_URL}/api/topics?id=${id}`)
+    const data = res.data
   return {
       props: {
           topicDetails: data,
