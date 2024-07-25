@@ -25,7 +25,7 @@ const MainPage = () => {
           <Link href={'/delete/' + t._id}>
             <p className="text-lg hover:text-rose-500 hover:underline">Delete</p>
           </Link>
-          <Link href={'/edit/' + t._id} >
+          <Link href={`${process.env.NEXT_PUBLIC_API_URL}/edit/` + t._id} >
             <p className="text-lg hover:text-emerald-500 hover:underline">Edit</p>
           </Link>
         </div>
