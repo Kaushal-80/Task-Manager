@@ -5,23 +5,23 @@ import React, { useEffect, useState } from 'react'
 
 
 const EditTopic = ({ topicDetails }) => {
-  // const router = useRouter();
-  // const { id } = router.query
+  const router = useRouter();
+  const { id } = router.query
   
-  // const [topicDetails, setTopicDetails] = useState(null);
+  const [topicDetails, setTopicDetails] = useState(null);
   
-  // useEffect(() => {
-  //   async function request() {
-  //   try {
-  //       await axios.get(`/api/topics?id=${id}`).then((res) => {
-  //         setTopicDetails(res.data);
-  //       })
-  //     } catch (error) {
-  //       console.error('Error fetching data:', error);
-  //     }
-  //   }
-  //   request();
-  // }, []);
+  useEffect(() => {
+    async function request() {
+    try {
+        await axios.get(`/api/topics?id=${id}`).then((res) => {
+          setTopicDetails(res.data);
+        })
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+    request();
+  }, []);
 
   return (
     <>
@@ -50,15 +50,15 @@ const EditTopic = ({ topicDetails }) => {
 
 
 
-export default EditTopic
+// export default EditTopic
 
-export async function getServerSideProps(ctx) {
-  const { id } = ctx.query
-  const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/topics?id=${id}`)
-    const data = res.data
-  return {
-      props: {
-          topicDetails: data,
-      },
-  }
-}
+// export async function getServerSideProps(ctx) {
+//   const { id } = ctx.query
+//   const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/topics?id=${id}`)
+//     const data = res.data
+//   return {
+//       props: {
+//           topicDetails: data,
+//       },
+//   }
+// }
